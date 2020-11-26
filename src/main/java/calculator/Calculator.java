@@ -8,7 +8,29 @@ package calculator;
 public class Calculator {
 
     public String calculate(String[] expr) {
-        return "0";
+        double a = Double.parseDouble(expr[0]);
+        String op = expr[1];
+        double b = Double.parseDouble(expr[2]);
+        double result = 0.0;
+
+        switch (op) {
+            case "+":
+                result = a + b;
+                break;
+            case "-":
+                result = a - b;
+                break;
+            case "/":
+                result = a / b;
+                break;
+            case "*":
+                result = a * b;
+                break;
+            default:
+                return "error";
+        }
+
+        return String.valueOf(result);
     }
 
 }
