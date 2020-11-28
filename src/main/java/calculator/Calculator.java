@@ -11,8 +11,6 @@ public class Calculator {
         double a = Double.parseDouble(expr[0]);
         String op_1 = expr[1];
         double b = Double.parseDouble(expr[2]);
-        String op_2 = expr[3];
-        double c = Double.parseDouble(expr[4]);
         double d = 0;
         double result = 0;
 
@@ -33,21 +31,33 @@ public class Calculator {
                 return "error";
         }
 
-        switch (op_2) {
-            case "+":
-                result = d + c;
-                break;
-            case "-":
-                result = d - c;
-                break;
-            case "/":
-                result = d / c;
-                break;
-            case "*":
-                result = d * c;
-                break;
-            default:
-                return "error";
+        if (expr.length == 3) {
+            result = d;
+
+        } else if (expr.length == 5) {
+
+            String op_2 = expr[3];
+            double c = Double.parseDouble(expr[4]);
+
+            switch (op_2) {
+                case "+":
+                    result = d + c;
+                    break;
+                case "-":
+                    result = d - c;
+                    break;
+                case "/":
+                    result = d / c;
+                    break;
+                case "*":
+                    result = d * c;
+                    break;
+                default:
+                    return "error";
+            }
+
+        } else {
+            return "error";
         }
 
         return String.valueOf(result);
