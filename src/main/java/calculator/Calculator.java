@@ -24,10 +24,10 @@ public class Calculator {
                 result = a + b - c;
                 break;
             case "+/":
-                result = a + b / c;
+                result = (a + b) / c;
                 break;
             case "+*":
-                result = a + b * c;
+                result = (a + b) * c;
                 break;
             case "-+":
                 result = a - b + c;
@@ -36,10 +36,10 @@ public class Calculator {
                 result = a - b - c;
                 break;
             case "-/":
-                result = a - b / c;
+                result = (a - b) / c;
                 break;
             case "-*":
-                result = a - b * c;
+                result = (a - b) * c;
                 break;
             case "/+":
                 result = a / b + c;
