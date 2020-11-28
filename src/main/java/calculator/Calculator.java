@@ -13,61 +13,42 @@ public class Calculator {
         double b = Double.parseDouble(expr[2]);
         String op_2 = expr[3];
         double c = Double.parseDouble(expr[4]);
-        String op = op_1 + op_2;
+        double d = 0;
         double result = 0;
 
-        switch (op) {
-            case "++":
-                result = a + b + c;
+        switch (op_1) {
+            case "+":
+                d = a + b;
                 break;
-            case "+-":
-                result = a + b - c;
+            case "-":
+                d = a - b;
                 break;
-            case "+/":
-                result = (a + b) / c;
+            case "/":
+                d = a / b;
                 break;
-            case "+*":
-                result = (a + b) * c;
-                break;
-            case "-+":
-                result = a - b + c;
-                break;
-            case "--":
-                result = a - b - c;
-                break;
-            case "-/":
-                result = (a - b) / c;
-                break;
-            case "-*":
-                result = (a - b) * c;
-                break;
-            case "/+":
-                result = a / b + c;
-                break;
-            case "/-":
-                result = a / b - c;
-                break;
-            case "//":
-                result = a / b / c;
-                break;
-            case "/*":
-                result = a / b * c;
-                break;
-            case "*+":
-                result = a * b + c;
-                break;
-            case "*-":
-                result = a * b - c;
-                break;
-            case "*/":
-                result = a * b / c;
-                break;
-            case "**":
-                result = a * b * c;
+            case "*":
+                d = a * b;
                 break;
             default:
                 return "error";
-            }
+        }
+
+        switch (op_2) {
+            case "+":
+                result = d + c;
+                break;
+            case "-":
+                result = d - c;
+                break;
+            case "/":
+                result = d / c;
+                break;
+            case "*":
+                result = d * c;
+                break;
+            default:
+                return "error";
+        }
 
         return String.valueOf(result);
     }
